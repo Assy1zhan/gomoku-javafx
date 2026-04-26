@@ -1,8 +1,8 @@
 # Gomoku (Five-in-a-Row)
 
-A desktop Gomoku game built in Java with a JavaFX UI. Two-player hot-seat gameplay on a configurable board, with a turn timer and live statistics.
+A desktop Gomoku game built in Java with a JavaFX UI. Two-player gameplay on a configurable board, with a turn timer and live statistics.
 
-Built as a course project for **CSC1004 (Object-Oriented Programming)** at CUHK-Shenzhen.
+Built as a course project for **CSC1004 (Computational Laboratory Using Java)** at CUHK-Shenzhen.
 
 ## Features
 
@@ -49,16 +49,9 @@ mvn clean javafx:run
 
 A window will open with a 20×20 board. Click any empty cell to place a stone. Black moves first, then White. Five in a row in any direction wins.
 
-## What I learned
-
-- Designing a clean engine/UI separation: the `GomokuGame` class has zero UI dependencies and is fully testable.
-- JavaFX layout primitives (`GridPane`, `StackPane`, `BorderPane`) and event handling.
-- `Timeline` / `KeyFrame` for time-based animations and turn timers.
-- Direction-vector approach to win detection — encoding the four directions as `int[][]` arrays keeps the win check concise (~25 lines for full 4-directional check).
-
 ## Possible extensions
 
-- **AI opponent** — minimax with alpha-beta pruning would be a natural next step given the game's branching factor.
+- **AI opponent**
 - **Save / load games** — serialize the `int[][] board` and `currentPlayer` to disk.
 - **Online multiplayer** — wrap the engine in a TCP server (a natural follow-on to my [chat room project](https://github.com/Assy1zhan/java-chat-room)).
 - **Difficulty levels** — once an AI is in place, vary search depth.
